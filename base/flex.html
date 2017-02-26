@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+        .box{
+            border: 2px solid rosybrown;
+            /*background-color: #ffe3ec;*/
+            width: 700px;
+            height: 500px;
+
+            display: flex;
+        }
+        .boxin{
+
+            width: 100px;
+        }
+        .bd1{
+            background-color: #86cfff;
+
+            /*order: 1;*/
+            /*flex-grow: 5;*/
+            flex-shrink: 0;
+            flex-basis: 600px;
+        }
+        .bd2{
+            background-color: #a0ff86;
+
+            /*order: 0;*/
+            /*flex-grow: 4;*/
+            flex-shrink: 0;
+            flex-basis: auto;
+        }
+        .bd3{
+            background-color: #fff866;
+
+            /*flex-grow: 3;*/
+            flex-shrink: 0;
+        }
+        .bd4{
+            background-color: #ff8870;
+            /*flex-grow: 2;*/
+        }
+        .bd5{
+            background-color: #bda3ff;
+            /*flex-grow: 1;*/
+            flex-shrink: 2;
+        }
+
+
+        .sp{
+            border: 1px dotted rosybrown;
+            display: flex;
+        }
+        .sd1{
+            background-color: #7a4dff;
+        }
+        .sd2{
+            background-color: #6cffe4;
+        }
+        .sd3{
+            background-color: #8aff9e;
+        }
+        .sd4{
+            background-color: #c6ff94;
+        }
+        .sd5{
+            background-color: #fff29f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <div class="bd1 boxin"><b>1</b></div>
+        <div class="bd2 boxin"><b>2</b></div>
+        <div class="bd3 boxin"><b>3</b></div>
+        <!--<div class="bd4 boxin"><b>4</b></div>-->
+        <!--<div class="bd5 boxin"><b>5</b></div>-->
+    </div>
+
+
+</body>
+
+
+
+</html>
