@@ -2,9 +2,110 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>网页换肤</title>
+    <style>
+        .content{
+            width: 400px;
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 3px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .red{
+            background-color: #AA6868;
+            box-shadow: 1px 1px #eeeeee;
+        }
+        .green{
+            background-color: #41A408;
+            box-shadow: 3px 3px #eeeeee;
+        }
+        .black{
+            background-color: #313637;
+            box-shadow: 3px 3px #eeeeee;
+        }
+        
+        .ul2{
+            padding: 0px;
+            border: 1px solid white;
+            align-self: 
+        }
+        .nav{
+            float: left;
+
+            height: 100%;
+            list-style: none;
+            color: white;
+            line-height: 29px;
+            text-align: center;
+            border-right: 1px solid white;
+            width: 45px;
+            cursor: pointer;
+        }
+        .nav:hover{
+            background-color: #CCCCCC;
+        }
+
+        body{
+            background-color: #AA6868;
+        }
+    </style>
 </head>
 <body>
-$END$
+
+    <div class="content">
+        <ul class="ul1">
+            <li class="red btn"></li>
+            <li class="green btn"></li>
+            <li class="black btn"></li>
+        </ul>
+
+        <ul class="ul2">
+            <li class="nav">AAA</li>
+            <li class="nav">BBB</li>
+            <li class="nav">CCC</li>
+            <li class="nav">DDD</li>
+            <li class="nav">EEE</li>
+            <li class="nav">FFF</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+        var skinArr = ["#AA6868", "#41A408", "#313637"];
+        var bodyElem = document.getElementsByTagName("body")[0];
+
+        function changeSkin(elem,index) {
+
+
+
+            elem.style.background = skinArr[index];
+        }
+
+
+
+        var btns = document.getElementsByClassName("btn");
+        for(var i = 0;i < btns.length;i++){
+            btns[i].index = i;
+            btns[i].onclick = function () {
+
+                this.style.boxShadow = "1px 1px #eeeeee";
+                changeSkin(bodyElem,this.index);
+                for (var i = btns.length - 1; i >= 0; i--) {
+                    if(i != this.index){
+                        btns[i].style.boxShadow = "3px 3px #eeeeee";
+                    }
+                }
+            }
+        }
+
+
+    </script>
 </body>
 </html>
