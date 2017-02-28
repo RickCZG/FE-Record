@@ -81,6 +81,30 @@
     </div>
 
 
+    <button id="test">测试作用域</button>
+    <input type="text">
+
+    <script>
+        var button = document.getElementById("test");
+
+        var user = {
+            name: "bob",
+            greeting: function () {
+                console.log("name is " + this.name);
+            }
+        }
+
+        user.greeting = user.greeting.bind(user);
+        button.addEventListener("click", user.greeting, false);
+
+        window.addEventListener("beforeunload", function (e) {
+            e.returnValue = "ok？";
+        });
+        window.addEventListener("resize", function (e) {
+            console.log("resize");
+        })
+        
+    </script>
 </body>
 
 
