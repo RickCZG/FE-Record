@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hover提示框</title>
+	<style type="text/css">
+
+	.out{
+		width: 200px;
+		border: 2px solid #ceacac;
+		margin: 10px auto;
+	}
+	input{
+		margin-right: 5px;
+		vertical-align: middle;
+	}
+	.box{
+		text-align: center;
+		line-height: 30px;
+		border-radius: 5px;
+		padding: 5px;
+		margin-top: 5px;
+		border: 2px solid #eeeeee;
+		/*display: none;*/
+		visibility: hidden;
+	}
+
+
+
+	</style>
+</head>
+<body>
+
+<div class="out">
+	<label><input type="checkbox" name="tip" id="tip">两周内自动登陆</label>
+
+	<div class="box">
+		小心谨慎啊！！
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var tip = document.getElementById("tip");
+	var box = document.getElementsByClassName("box")[0];
+	tip.onmouseover = function (e) {
+		var x = e.x,y = e.y;
+		box.style.visibility = "visible";
+	}
+	tip.onmouseout = function (e) {
+		box.style.visibility = "hidden";
+	}
+
+
+</script>
+</body>
+</html>
