@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>下拉框</title>
+	<style type="text/css">
+		body{
+			font:12px/1.5 Tahoma;
+		}
+
+		.wrap{
+			text-align: center;
+			width: 100px;
+			margin: 10px auto;
+
+		}
+		button{
+			width: 50px;
+		}
+		#list{
+			display: none;
+			border: 1px solid #ccccee;
+			margin-top: 5px;
+			text-align: center;
+			padding: 0px;
+		}
+		.item{
+			list-style-type: none;
+			text-align: center;
+			line-height: 25px;
+		}
+		.item:hover{
+			background-color: #cccccc;
+			cursor: pointer;
+			text-align: center;
+		}
+		a{
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<button id="btn">FE</button>
+		<ul id="list">
+			<li class="item"><a href="">CSS</a></li>
+			<li class="item"><a href="">HTML</a></li>
+			<li class="item"><a href="">JavaScript</a></li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+	var list = document.getElementById("list");
+	var btn = document.getElementById("btn");
+	var isShow = false;
+
+	btn.onclick = function () {
+		isShow = !isShow;
+		if(isShow){
+			list.style.display = "block";
+		}else{
+			list.style.display = "none";
+		}
+		
+	}
+	</script>
+</body>
+</html>
