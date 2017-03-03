@@ -5,7 +5,7 @@
 	<style type="text/css">
 		#wrap{			
 			padding: 0px;
-			width: 200px;
+			width: 250px;
 			margin: 5px auto;
 			text-align: center;
 		}
@@ -13,51 +13,80 @@
 			color: black;
 			font-size: 20px;
 		}
-		#sum{
+		button{
 			background-color: #2C2A2A;
 			color:white;
 			border-radius: 5px;
 			border: none;
 			margin-left: 5px; 
 		}
+		#clear{
+			background-color: #cccccc;
+		}
 	</style>
 </head>
 <body>
 
 <div id="wrap">
-	<input type="text" name="textIn" id="in"><button id="sum">Sum</button>
+	<input type="text" name="textIn" id="in" placeholder="输入数字并以逗号隔开"><button id="sum">Sum</button><button id="clear">clear</button>
 	<p id="result"></p>
 </div>
 
 <script type="text/javascript">
 	var resultDom = document.getElementById("result");
 	var inputDom = document.getElementById("in");
-	var btn = document.getElementById("sum");
+	var sumBtn = document.getElementById("sum");
+	var clearBtn = document.getElementById("clear");
 
-	var resultText;
+	var inputText = "";
 	var showText = "";
+	var sumArr = [];
+	var sum = 0;
 	function getInputText() {
-		resultText = inputDom.value;
-
-		console.log(typeof resultText)
+		inputText = inputDom.value;
 	}
 	function animationShow(str) {
+		str = str + "";
+		showText = "";
 		for(var i = 0;i < str.length;i++){
 			(function (index) {
 				setTimeout(function () {
-					showText += resultText[index];
+					showText += str[index];
 					resultDom.innerHTML = showText;
 				},index*300)
 			})(i)
 		}
 	}
-
+	function processStr(str) {	// 处理输入放入数组并求和
+		var sumArr = []
+		var temp = "";
+		for(var i = 0;i < str.length;i++){
+			if(str[i] != ","){
+					temp += str[i];
+					if(i === str.length-1){
+						sumArr.push(parseInt(temp));
+					}
+			}else if(temp != ""){
+				sumArr.push(parseInt(temp));
+				temp = "";
+			}
+		}
+		for(var i = 0;i < sumArr.length;i++){
+			sum += (sumArr[i]*1);
+		}
+	}
 	function clickShow(){
 		getInputText();
-		animationShow(resultText);
+		processStr(inputText);
+		animationShow(sum);
+		clearInput();
 	}
-
-	btn.addEventListener("click", clickShow, false);
+	function clearInput() {
+		inputDom.value = "";
+		inputDom.focus();
+	}
+	sumBtn.addEventListener("click", clickShow, false);
+	clearBtn.addEventListener("click", clearInput, false);
 
 
 </script>
