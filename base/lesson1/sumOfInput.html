@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>输入求和</title>
+	<style type="text/css">
+		#wrap{			
+			padding: 0px;
+			width: 200px;
+			margin: 5px auto;
+			text-align: center;
+		}
+		#result{
+			color: black;
+			font-size: 20px;
+		}
+		#sum{
+			background-color: #2C2A2A;
+			color:white;
+			border-radius: 5px;
+			border: none;
+			margin-left: 5px; 
+		}
+	</style>
+</head>
+<body>
+
+<div id="wrap">
+	<input type="text" name="textIn" id="in"><button id="sum">Sum</button>
+	<p id="result"></p>
+</div>
+
+<script type="text/javascript">
+	var resultDom = document.getElementById("result");
+	var inputDom = document.getElementById("in");
+	var btn = document.getElementById("sum");
+
+	var resultText;
+	var showText = "";
+	function getInputText() {
+		resultText = inputDom.value;
+
+		console.log(typeof resultText)
+	}
+	function animationShow(str) {
+		for(var i = 0;i < str.length;i++){
+			(function (index) {
+				setTimeout(function () {
+					showText += resultText[index];
+					resultDom.innerHTML = showText;
+				},index*300)
+			})(i)
+		}
+	}
+
+	function clickShow(){
+		getInputText();
+		animationShow(resultText);
+	}
+
+	btn.addEventListener("click", clickShow, false);
+
+
+</script>
+</body>
+</html>
