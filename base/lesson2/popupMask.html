@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>弹出层</title>
+	<style type="text/css">
+		html,body{
+			padding: 0;
+			height: 100%;
+			width: 100%;
+		}
+		#wrap{
+			width: 200px;
+			height: 100px;
+			margin: 0 auto;
+			text-align: center;
+			line-height: 100px;
+			position: relative;
+		}
+		#btn{
+			border-radius: 5px;
+			background-color: black;
+			color: white;
+			border: none;
+		}
+		#dialog{
+			font-size: 12px;
+			width: 300px;
+			height: 200px;
+			border: 5px solid black;
+			border-radius: 5px;
+
+			display: none;
+			position: fixed;
+			top: 200px;
+			left: 50%;
+			margin-left: -150px;
+			z-index: 100;
+			background-color: white;
+
+
+		}
+		#title{
+			height: 25px;
+			line-height: 25px;
+			border-bottom: 5px solid black;
+			padding-left: 5px;
+			position: relative;
+
+		}
+		#mask{
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			height: 100%;
+			width: 100%;
+			background-color: black;
+			opacity: 0.5;
+			display: none;
+		}
+		#close{
+			position: absolute;
+			right: 5px;
+			border: 1px solid black;
+			width: 16px;
+			height: 16px;
+			text-align: center;
+			line-height: 16px;
+			top:50%;
+			margin-top: -8px;
+			border-radius: 8px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<button id="btn">弹出层</button>
+	</div>
+	<div id="dialog">
+		<div id="title"><span id="close">C</span></div>
+		<div id="content"></div>
+	</div>
+	<div id="mask"></div>
+
+	<script type="text/javascript">
+		var btn = document.getElementById("btn"),
+			dialog = document.getElementById("dialog"),
+			mask = document.getElementById("mask"),
+			close = document.getElementById("close");
+
+		function showDialog() {
+			dialog.style.display = "block";
+			mask.style.display = "block";
+		}
+		function closeDialog() {
+			dialog.style.display = "none";
+			mask.style.display = "none";
+		}
+
+		btn.addEventListener("click", showDialog, false);
+		close.addEventListener("click", closeDialog, false);
+
+
+
+	</script>
+</body>
+</html>
