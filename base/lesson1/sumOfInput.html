@@ -3,6 +3,10 @@
 <head>
 	<title>输入求和</title>
 	<style type="text/css">
+		input{
+			border: 1px solid #cccccc;
+			border-radius: 2px;
+		}
 		#wrap{			
 			padding: 0px;
 			width: 250px;
@@ -33,58 +37,80 @@
 </div>
 
 <script type="text/javascript">
-	var resultDom = document.getElementById("result");
-	var inputDom = document.getElementById("in");
-	var sumBtn = document.getElementById("sum");
-	var clearBtn = document.getElementById("clear");
-
-	var inputText = "";
-	var showText = "";
+	var resultDom,
+		inputDom,
+		sumBtn,
+		clearBtn;
+	function initDomVariables(){	// 生成
+		resultDom = document.getElementById("result");
+		inputDom = document.getElementById("in");
+		sumBtn = document.getElementById("sum");
+		clearBtn = document.getElementById("clear");
+	}
+	
 	var sumArr = [];
 	var sum = 0;
-	function getInputText() {
-		inputText = inputDom.value;
-	}
-	function animationShow(str) {
-		str = str + "";
-		showText = "";
-		for(var i = 0;i < str.length;i++){
-			(function (index) {
-				setTimeout(function () {
-					showText += str[index];
-					resultDom.innerHTML = showText;
-				},index*300)
-			})(i)
-		}
-	}
-	function processStr(str) {	// 处理输入放入数组并求和
+	var expression = [];
+
+
+	function processInput(str) {	// 处理输入放入数组并求和
 		var sumArr = []
 		var temp = "";
+		sum = 0;
+		expression = [];
 		for(var i = 0;i < str.length;i++){
-			if(str[i] != ","){
+			if(str[i] != ","){	// 非逗号，加到temp上
 					temp += str[i];
 					if(i === str.length-1){
-						sumArr.push(parseInt(temp));
+						sumArr.push(parseInt(temp));	//非逗号且到字符串末尾，直接push到数组
 					}
 			}else if(temp != ""){
-				sumArr.push(parseInt(temp));
+				sumArr.push(parseInt(temp));	//非逗号且非空格，push到数组
 				temp = "";
 			}
 		}
 		for(var i = 0;i < sumArr.length;i++){
 			sum += (sumArr[i]*1);
 		}
+
+		sumArr.forEach(function(item, index){
+			if(index != sumArr.length-1){
+				expression.push(item);
+				expression.push("+");
+			}else{
+				expression.push(item);
+			}
+		})
+		if(sumArr.length != 1){
+			expression.push("=");
+			expression.push(sum);
+		}
+	}
+	function animationShow(str) {
+
+		var showText = "";
+		for(var i = 0;i < str.length;i++){
+			(function (index) {
+				setTimeout(function () {
+					showText += (str[index] + "");
+					resultDom.innerHTML = showText;
+				},index*300)
+			})(i)
+		}
 	}
 	function clickShow(){
-		getInputText();
-		processStr(inputText);
-		animationShow(sum);
+		processInput(inputDom.value);
+		animationShow(expression);
 		clearInput();
 	}
 	function clearInput() {
 		inputDom.value = "";
 		inputDom.focus();
 	}
+
+
+
+	initDomVariables();
 	sumBtn.addEventListener("click", clickShow, false);
 	clearBtn.addEventListener("click", clearInput, false);
 
