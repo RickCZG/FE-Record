@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>workDemo</title>
+	<style type="text/css">
+		.wrap{
+			position: relative;
+		}
+
+		#l{
+			position: absolute;
+			/*left: 0px;*/
+			/*top: 0px;*/
+			border: 2px solid red;
+			/*width: 50px;*/
+			/*height: 50px;*/
+		}
+	</style>
+</head>
+<body>
+
+<div class="wrap">
+	<img src="./doge.jpg" style="width:200px;height: 200px;">
+	<div id="l"></div>
+</div>
+
+<button id="btn">C</button>
+
+<script type="text/javascript">
+	var li = document.getElementById("l");
+	var btn = document.getElementById("btn")
+	
+	li.style.left = 20 + "px";
+	li.style.top = 33 + "px";
+	li.style.width = 50 + "px";
+	li.style.height = 50 + "px";
+
+	function set() {
+		li.style.left = 0 + "px";
+		li.style.top = 0 + "px";
+		li.style.width = 50 + "px";
+		li.style.height = 50 + "px";
+	}
+	btn.addEventListener("click", set, "false");
+
+</script>
+</body>
+</html>

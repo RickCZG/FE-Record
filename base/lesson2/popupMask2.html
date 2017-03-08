@@ -75,8 +75,42 @@
 	}
 	.item-content-header{
 		height: 27px;
-		
+		padding-right: 3px;
+		padding-left: 1px;
+		margin-bottom: 8px;
+		line-height: 27px;
+		position: relative;
 	}
+	.item-content-header-img{
+		width: 24px;
+		height: 24px;
+	}
+	.user-img{
+		margin-right: 8px;
+	}
+	.user-name a{
+		text-decoration: none;
+	}
+	.user-beforetime{
+		position: absolute;
+		right: 0px;
+		font-size: 14px;
+		color: #8590a6;
+	}
+	.item-content-mid{
+		margin-bottom: 8px;
+		line-height: 27px;
+	}
+	.item-content-footer{
+		display: flex;
+		align-items: center;
+		height: 24px;
+		font-size: 12px;
+	}
+	.item-content-footer-del{
+		margin-left: 24px;
+	}
+
 	</style>
 </head>
 <body>
@@ -96,10 +130,21 @@
 			<div class="item">
 				<div>
 					<div class="item-content-header">
-					<span><a href=""><img src="./xx.jpeg"></a></span>
+					<span class="user-img">
+						<a href="">
+							<img src="./xx.jpeg" class="item-content-header-img">
+						</a>
+					</span>
+					<span class="user-name">
+						<a href="">章三</a>
+					</span>
+					<span class="user-beforetime">3天前</span>
 					</div>
 					<div class="item-content-mid">这是第一条评论内容</div>
-					<div class="item-content-footer"></div>
+					<div class="item-content-footer">
+						<span>赞</span>
+						<span class="item-content-footer-del">删</span>
+					</div>
 				</div>
 			</div>
 			<div class="item">
