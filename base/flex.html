@@ -1,112 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>flex</title>
-    <style>
-        .box{
-            border: 2px solid rosybrown;
-            /*background-color: #ffe3ec;*/
-            width: 700px;
-            height: 500px;
-
-            display: flex;
+    <title>Flex</title>
+    <style type="text/css">
+        html,body{
+            width: 100%;
+            height: 100%;
         }
-        .boxin{
+        .out{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            /*flex-direction: column;*/
+
+        }
+        .d1{
+
+            width: 50px;
+            background-color: #e1e2e3;
+        }
+        .d2{
 
             width: 100px;
+            background-color: #c2ceca;
         }
-        .bd1{
-            background-color: #86cfff;
+        .d3{
 
-            /*order: 1;*/
-            /*flex-grow: 5;*/
-            flex-shrink: 0;
-            flex-basis: 600px;
-        }
-        .bd2{
-            background-color: #a0ff86;
-
-            /*order: 0;*/
-            /*flex-grow: 4;*/
-            flex-shrink: 0;
-            flex-basis: auto;
-        }
-        .bd3{
-            background-color: #fff866;
-
-            /*flex-grow: 3;*/
-            flex-shrink: 0;
-        }
-        .bd4{
-            background-color: #ff8870;
-            /*flex-grow: 2;*/
-        }
-        .bd5{
-            background-color: #bda3ff;
-            /*flex-grow: 1;*/
-            flex-shrink: 2;
+            width: 100px;
+            background-color: #dadad3;
+            align-self: flex-end;
         }
 
-
-        .sp{
-            border: 1px dotted rosybrown;
-            display: flex;
-        }
-        .sd1{
-            background-color: #7a4dff;
-        }
-        .sd2{
-            background-color: #6cffe4;
-        }
-        .sd3{
-            background-color: #8aff9e;
-        }
-        .sd4{
-            background-color: #c6ff94;
-        }
-        .sd5{
-            background-color: #fff29f;
-        }
     </style>
 </head>
 <body>
 
-    <div class="box">
-        <div class="bd1 boxin"><b>1</b></div>
-        <div class="bd2 boxin"><b>2</b></div>
-        <div class="bd3 boxin"><b>3</b></div>
-        <!--<div class="bd4 boxin"><b>4</b></div>-->
-        <!--<div class="bd5 boxin"><b>5</b></div>-->
-    </div>
-
-
-    <button id="test">测试作用域</button>
-    <input type="text">
-
-    <script>
-        var button = document.getElementById("test");
-
-        var user = {
-            name: "bob",
-            greeting: function () {
-                console.log("name is " + this.name);
-            }
-        }
-
-        user.greeting = user.greeting.bind(user);
-        button.addEventListener("click", user.greeting, false);
-
-        window.addEventListener("beforeunload", function (e) {
-            e.returnValue = "ok？";
-        });
-        window.addEventListener("resize", function (e) {
-            console.log("resize");
-        })
-        
-    </script>
+<div class="out">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+</div>
 </body>
-
-
-
 </html>
