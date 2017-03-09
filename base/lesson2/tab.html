@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>选项卡</title>
+	<style type="text/css">
+		.wrap{
+			width: 500px;
+			border: 2px solid black;
+			margin: 0 auto;
+		}
+		.tab{
+			background-color: black;
+			padding: 0px;
+			margin: 0px;
+		}
+		.l{
+			display: inline-block;
+			width: 100px;
+			color: white;
+			font-weight: bold;
+			text-align: center;
+			cursor: pointer;
+		}
+		.l:hover{
+			background-color: #cecece;
+		}
+		.content{
+			padding: 10px;
+			font-size: 12px;
+			height: 200px;
+		}
+		#content2{
+			display: none;
+		}
+		#content3{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<ul class="tab">
+		<li class="l">图形学</li>
+		<li class="l">数据可视化</li>
+		<li class="l">机器学习</li>
+	</ul>
+	<div id="content1" class="content">
+		计算机图形学（英语：computer graphics，缩写为CG）是研究计算机在硬件和软件的帮助下创建计算机图形的科学学科，是计算机科学的一个分支领域，主要关注数字合成与操作视觉的图形内容。虽然这个词通常被认为是指三维图形，事实上同时包括了二维图形以及视频处理。
+	</div>
+	<div id="content2" class="content">
+		数据可视化主要旨在借助于图形化手段，清晰有效地传达与沟通信息。但是，这并不就意味着，数据可视化就一定因为要实现其功能用途而令人感到枯燥乏味，或者是为了看上去绚丽多彩而显得极端复杂。为了有效地传达思想概念，美学形式与功能需要齐头并进，通过直观地传达关键的方面与特征，从而实现对于相当稀疏而又复杂的数据集的深入洞察。然而，设计人员往往并不能很好地把握设计与功能之间的平衡，从而创造出华而不实的数据可视化形式，无法达到其主要目的，也就是传达与沟通信息。
+	</div>
+	<div id="content3" class="content">
+		机器学习是人工智能的一个分支。人工智能的研究是从以“推理”为重点到以“知识”为重点，再到以“学习”为重点，一条自然、清晰的脉络。显然，机器学习是实现人工智能的一个途径，即以机器学习为手段解决人工智能中的问题。机器学习在近30多年已发展为一门多领域交叉学科，涉及概率论、统计学、逼近论、凸分析、计算复杂性理论等多门学科。机器学习理论主要是设计和分析一些让计算机可以自动“学习”的算法。机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。因为学习算法中涉及了大量的统计学理论，机器学习与推断统计学联系尤为密切，也被称为统计学习理论。算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。很多推论问题属于无程序可循难度，所以部分的机器学习研究是开发容易处理的近似算法。
+	</div>
+</div>
+
+<script type="text/javascript">
+	var content1 = document.getElementById("content1");
+	var content2 = document.getElementById("content2");
+	var content3 = document.getElementById("content3");
+	var lis = document.getElementsByClassName("l");
+
+	function changeTab(){
+		console.log(event.target.innerHTML);
+		var text = event.target.innerHTML;
+		var thisLi = event.target;
+
+		for(var i = 0;i < lis.length;i++){
+			lis[i].style.backgroundColor = "black";
+		}
+		thisLi.style.backgroundColor = "#cecece";
+		if(text === "图形学"){
+			content2.style.display = "none";
+			content3.style.display = "none";
+			content1.style.display = "block";
+		}else if(text === "数据可视化"){
+			content1.style.display = "none";
+			content3.style.display = "none";
+			content2.style.display = "block";
+		}else if(text === "机器学习"){
+			content1.style.display = "none";
+			content2.style.display = "none";
+			content3.style.display = "block";
+		}
+	}
+
+	for(var i = 0;i < lis.length;i++){
+		lis[i].onclick = changeTab;
+	}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
