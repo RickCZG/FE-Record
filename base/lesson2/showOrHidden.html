@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>单一按钮显示／隐藏</title>
+	<style type="text/css">
+		.wrap{
+			width: 200px;
+			border: 1px solid black;
+			padding: 2px;
+			margin: 0 auto;
+		}
+		.btn{
+			cursor: pointer;
+			background-color: black;
+			color: white;
+			font-size: 14px;
+			padding: 1px 5px;
+			line-height: 22px;
+			position: relative;
+		}
+		.btn-triangle-down{
+			display: inline-block;
+			border: 5px solid white;
+			position: absolute;
+			right: 5px;
+			top: 9px;
+			border-left: 5px solid black;
+			border-right: 5px solid black;
+			border-bottom: 5px solid black;
+		}
+		.btn-triangle-up{
+			display: inline-block;
+			border: 5px solid white;
+			position: absolute;
+			right: 5px;
+			top: 4px;
+			border-left: 5px solid black;
+			border-right: 5px solid black;
+			border-top: 5px solid black;
+		}
+		.content{
+			padding-left: 1px;
+			font-size: 15px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="btn">
+		<span>列表</span>
+		<div class="btn-triangle-up" id="triangle"></div>
+	</div>
+	<div class="content">
+		It'd be better to light up the candle than curse the darkness. No one can give you brightness except yourself. <br>
+		与其诅咒黑暗，不如燃起蜡烛。没有人能给你光明，除了你自己。
+
+	</div>
+</div>
+
+<script type="text/javascript">
+	var btn  = document.getElementsByClassName("btn")[0];
+	var triangle = document.getElementById("triangle");
+	var content = document.getElementsByClassName("content")[0];
+	var isUp = true;
+
+	btn.onclick = function () {
+		// triangle.className = "";
+		isUp = !isUp;
+		if(isUp){
+			triangle.className = "btn-triangle-up";
+			content.style.display = "none";
+		}else{
+			triangle.className = "btn-triangle-down";
+			content.style.display = "block";
+		}
+	}
+
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
