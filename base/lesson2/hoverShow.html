@@ -3,15 +3,119 @@
 <head>
 	<title>鼠标滑过展示图片</title>
 	<style type="text/css">
-		
-
-
+		.wrap{
+			width: 800px;
+			border: 1px solid black;
+			padding-left: 20px;
+			padding-top: 5px;
+			margin: 5px auto;
+			background-color: #CCCDD5;
+			color: #fff;
+			border-radius: 5px;
+		}
+		h2{
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.content{
+			margin-top: 15px;
+		}
+		.img{
+			display: inline-block;
+			width: 120px;
+			height: 120px;
+			border: 1px solid black;
+			text-align: center;
+			line-height: 120px;
+			margin: 15px;
+			background-color: #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+			position: relative;
+		}
+		img{
+			width: 300px;
+			height: 200px;
+			position: absolute;
+			left: -90px;
+			top: -40px;
+			display: none;
+			z-index: 10;
+			border-radius: 5px;
+			border: 2px solid darkgray;
+		}
+		a{
+			text-decoration: none;
+			color: #fff;
+			font-weight: 600;
+		}
 	</style>
 </head>
 <body>
 <div class="wrap">
-	
-	
+	<h2>水浒英雄展示卡片</h2>
+	<div class="content">
+		<div class="img" id="">
+			<a href="javascript:;">出水蛟 童威</a>
+			<img src="1.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">呼保义 宋江</a>
+			<img src="2.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">玉麒麟 卢俊义</a>
+			<img src="3.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">出林龙 邹渊</a>
+			<img src="4.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">九纹龙 史进</a>
+			<img src="5.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">铁笛仙 马麟</a>
+			<img src="6.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">大刀 关胜</a>
+			<img src="7.jpg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">玉臂匠 金大坚</a>
+			<img src="8.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">旱地忽律 朱贵</a>
+			<img src="9.jpeg">
+		</div>
+		<div class="img" id="">
+			<a href="javascript:;">黑旋风 李逵</a>
+			<img src="10.jpeg">
+		</div>
+	</div>
 </div>
+
+
+
+<script type="text/javascript">
+	var divs = document.getElementsByClassName("img");
+	var imgs = document.getElementsByTagName("img");
+
+	for(var i = 0;i < divs.length;i++){
+		divs[i].index = i;
+		divs[i].onmouseover = function () {
+			imgs[this.index].style.display = "block";
+		}
+		divs[i].onmouseout = function () {
+			imgs[this.index].style.display = "none";
+		}
+	}
+
+
+</script>
 </body>
 </html>
