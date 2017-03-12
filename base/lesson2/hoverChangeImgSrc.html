@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>鼠标移过改变图片路径</title>
+	<style type="text/css">
+		.wrap{
+			width: 544px;
+			border: 2px solid #ccc;
+			margin: 0 auto;
+			border-radius: 5px;
+			background-color: gainsboro;
+			padding-left: 6px;
+		}
+		img{
+			border: 3px solid #CECEE8;
+			border-radius: 5px;
+		}
+		.col1Ofrow1{
+			display: inline-block;
+		}
+		.col2Ofrow1{
+			display: inline-block;
+			padding: 0;
+			margin: 0px;
+		}
+		li{
+			list-style: none;
+		}
+		.showImg{
+			width: 400px;
+			height: 277px;
+		}
+		.img{
+			height: 85px;
+			width: 120px;
+		}
+		.row2{
+			padding: 0;
+			margin: 0;
+		}
+		.row2 li{
+			display: inline-block;
+			margin-right: 6px;
+		}
+
+		
+		
+
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="row1">
+		<div class="col1Ofrow1">
+			<img src="lion1.jpeg" class="showImg" id="imgArea" >
+		</div>
+		<ul class="col2Ofrow1">
+			<li><img src="lion1.jpeg" class="img"></li>
+			<li><img src="lion2.jpeg" class="img"></li>
+			<li><img src="lion3.jpeg" class="img"></li>
+		</ul>
+	</div>
+	<ul class="row2">
+		<li><img src="lion4.jpeg" class="img"></li>
+		<li><img src="lion5.jpeg" class="img"></li>
+		<li><img src="tiger1.jpeg" class="img"></li>
+		<li><img src="tiger2.jpeg" class="img"></li>
+		<li><img src="panda.jpeg" class="img"></li>
+		<li><img src="xiniu.jpeg" class="img"></li>
+		<li><img src="yang.jpg" class="img"></li>
+		<li><img src="ma.jpg" class="img"></li>
+	</ul>
+</div>
+
+<script type="text/javascript">
+	var showImg = document.getElementById("imgArea");
+	var lis = document.getElementsByClassName("img");
+
+	for(var i = 0;i < lis.length;i++){
+		lis[i].onmouseover = function(e){
+			showImg.src = e.target.src;
+		}
+	}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
