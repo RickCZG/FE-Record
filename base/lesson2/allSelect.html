@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>全选／全不选</title>
+	<style type="text/css">
+		.wrap{
+			width: 150px;
+			margin: 0 auto;
+			border: 2px solid #f0f2f7;
+			font-size: 12px;
+		}
+		.checked{
+			border-bottom: 1px solid #f0f2f7;
+			padding: 5px 10px;
+
+		}
+		.reverse{
+			cursor: pointer;
+			margin-left: 15px;
+		}
+		.reverse:hover{
+			color: blue;
+		}
+		li{
+			list-style: none;
+			margin-left: 0px;
+			margin-right: 0px;
+			margin-top: 5px;
+			border-bottom: 1px solid #f0f2f7;
+		}
+		ul{
+			margin: 0;
+			padding: 0px 10px;
+
+		}
+		.msg{
+			border-top: 1px solid #f0f2f7;
+			padding: 5px 0px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="checked">
+		<input type="checkbox" name=""><span class="checkedAll">全选</span>
+		<span class="reverse">反选</span>
+	</div>
+	<ul>
+		<li><input type="checkbox" name="">选项1</li>
+		<li><input type="checkbox" name="">选项2</li>
+		<li><input type="checkbox" name="">选项3</li>
+		<li><input type="checkbox" name="">选项4</li>
+		<li><input type="checkbox" name="">选项5</li>
+		<li><input type="checkbox" name="">选项6</li>
+		<li><input type="checkbox" name="">选项7</li>
+		<li><input type="checkbox" name="">选项8</li>
+		<li><input type="checkbox" name="">选项9</li>
+		<li><input type="checkbox" name="">选项10</li>
+	</ul>
+	<div class="msg">
+		<span>当前选中了</span><span id="num">0</span>条
+	</div>
+</div>
+</body>
+
+<script type="text/javascript">
+	var lis = document.getElementsByTagName("li");
+	var checkedAll = document.getElementsByClassName("checkedAll")[0];
+
+
+
+
+
+</script>
+</html>
