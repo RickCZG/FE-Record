@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>各种width和height</title>
+	<style type="text/css">
+
+		.in{
+			border: 5px solid red;
+			width: 200px;
+			height: 200px;
+			padding: 10px;
+			overflow: scroll;
+		}
+	</style>
+</head>
+<body>
+
+
+	<div class="in">
+	width:200px,height:200px<br>border:10px<br>padding:10px<br><br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条<br>测试滚动条
+	</div>
+
+
+<script type="text/javascript">
+	var inDom = document.getElementsByClassName("in")[0];
+
+
+	console.log("offsetWidth: " + inDom.offsetWidth);
+	console.log("offsetHeight: " + inDom.offsetHeight);
+	console.log("clientWidth: " + inDom.clientWidth);
+	console.log("clientHeight: " + inDom.clientHeight);
+	console.log("scrollWidth: " + inDom.scrollWidth);
+	console.log("scrollHeight: " + inDom.scrollHeight);
+</script>
+</body>
+</html>
