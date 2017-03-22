@@ -57,28 +57,80 @@
 		#centerWrap4{
 
 		}
-		.center4{
-			
+		.center41{
+			height: 50%;
+			border: 1px solid #A9263C;
+			line-height: 150px;
+		}
+		.center42{
+			height: 50%;
+			border: 1px solid #A9263C;
+			line-height: 150px;
+		}
+		#centerWrap5{
+			display: table;
+		}
+		.center5{
+			/*width: 100px;*/
+			/*height: 100px;*/
+			/*background-color: #9C6BA2;*/
+			display: table-cell;
+			vertical-align: middle;
+		}
+		#centerWrap6{
+			text-align: center;
+		}
+
+		.center6{
+			width: 100px;
+			height: 100px;
+			background-color: #C4C079;
+			display: inline-block;
+			/*display: inline-flex;*/
+			/*display: inline-table;*/
+		}
+		#centerWrap7{
+
 		}
 	</style>
 </head>
 <body>
 
-<div class="centerWrap" id="centerWrap1">
-	知道要居中元素的宽高,margin-left和margin-top取宽高负一半
-	<div class="center1">Center1</div>
+	<div class="centerWrap" id="centerWrap1">
+		知道要居中元素的宽高,margin-left和margin-top取宽高负一半
+		<div class="center1">Center1</div>
 
-</div>
-<div class="centerWrap" id="centerWrap2">
-	不知道要居中元素的宽高,transform: translate(-50%,-50%);(IE10+以及其他现代浏览器才支持)
-	<div class="center2">Center2</div>
-</div>
-<div class="centerWrap" id="centerWrap3">
-	绝对定位，left/right/top/bottom=0,margin:auto
-	<div class="center3">Center3</div>
-</div>
-<div class="centerWrap" id="centerWrap4">
-	<div class="center4"></div>
-</div>
+	</div>
+	<div class="centerWrap" id="centerWrap2">
+		不知道要居中元素的宽高,transform: translate(-50%,-50%);(IE10+以及其他现代浏览器才支持)
+		<div class="center2">Center2</div>
+	</div>
+	<div class="centerWrap" id="centerWrap3">
+		绝对定位，left/right/top/bottom=0,margin:auto
+		<div class="center3">Center3</div>
+	</div>
+	<div class="centerWrap" id="centerWrap4">
+		<div class="center41">测试单行文字居中？</div>
+		<div class="center42">
+			<a href=""><img src="shut.png"></a>
+		</div>
+	</div>
+	<div class="centerWrap" id="centerWrap5">
+		<div class="center5">
+			居中
+		</div>
+	</div>
+	<div class="centerWrap" id="centerWrap6">
+
+		<div class="center6"></div>
+		<br>居中inline-*元素，父元素是block元素：text-align：center
+	</div>
+	<div class="centerWrap" id="centerWrap7">
+		<span>
+			第一行文字<br>
+		第二行文字<br>
+		第三行文字
+		</span>
+	</div>
 </body>
 </html>
