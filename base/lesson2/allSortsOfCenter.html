@@ -90,8 +90,20 @@
 			/*display: inline-table;*/
 		}
 		#centerWrap7{
-
+			display: table;
 		}
+		.center7{
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		#centerWrap8{
+			text-align: center;
+		}
+		.center8{
+			display: inline-flex;
+		}
+
 	</style>
 </head>
 <body>
@@ -112,7 +124,7 @@
 	<div class="centerWrap" id="centerWrap4">
 		<div class="center41">测试单行文字居中？</div>
 		<div class="center42">
-			<a href=""><img src="shut.png"></a>
+			<img src="shut.png">
 		</div>
 	</div>
 	<div class="centerWrap" id="centerWrap5">
@@ -126,11 +138,15 @@
 		<br>居中inline-*元素，父元素是block元素：text-align：center
 	</div>
 	<div class="centerWrap" id="centerWrap7">
-		<span>
+		<span class="center7">
 			第一行文字<br>
-		第二行文字<br>
-		第三行文字
+			第二行文字<br>
+			第三行文字
 		</span>
 	</div>
+	<div class="centerWrap" id="centerWrap8">
+		<span class="center8">单行文字</span>
+	</div>
+	
 </body>
 </html>

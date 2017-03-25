@@ -39,6 +39,66 @@
 	console.log("clientHeight: " + inDom.clientHeight);
 	console.log("scrollWidth: " + inDom.scrollWidth);
 	console.log("scrollHeight: " + inDom.scrollHeight);
+
+
+
+	var w, x , y, z;
+
+	
+	
+
+
+
+
+	function calculate(w, x, y, z) {
+		/*
+		读取w，x，y，z
+	
+		*/
+		if (w<1 || w > x || x > 100 || y < 1 || y > z || z > 100) {
+			return 0;
+		}
+		var arrLength = x/y;
+		var arr = [];
+		for(var i = 0;i < arrLength;i++){
+			arr[i] = false;
+		}
+
+		for(var i = w;i <= x;i++){
+			for(var j = y;j <= z;j++){
+				var res = Math.ceil(i/j);
+				console.log(res);
+				arr[res-1] = true;
+			}
+		}
+		console.log(arr);
+		var count = 0;
+		for(var i = 0;i < arrLength;i++){
+			if(arr[i]){
+				count++;
+			}
+		}
+		return count;
+	}
+
+	console.log(calculate(5,10,2,3));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
