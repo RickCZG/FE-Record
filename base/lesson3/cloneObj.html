@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>克隆对象</title>
+	<style type="text/css">
+		
+
+	</style>
+</head>
+<body>
+
+<script type="text/javascript">
+	function shadowCopy(src) {
+		var dst = {};
+		for(var prop in src){
+			if(src.hasOwnProperty(prop)){
+				dst[prop] = src[prop];
+			}
+		}
+		return dst;
+	}
+
+	var obj = {
+		a: 1,
+		arr: [2, 3]
+	}
+	var clonedObj = shadowCopy(obj);
+
+	debugger;
+</script>
+</body>
+</html>

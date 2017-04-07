@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css属性练习场</title>
+	<style type="text/css">
+		div{
+			height: 100px;
+		}
+		div.d:before{
+			content: attr(data-foo) " ";
+		}
+		#btn:disabled{
+			background-color: #ccc;
+		}
+		div:empty{
+			background-color: #bca;
+		}
+		p{
+			height: 100px;
+			border: 1px solid black;
+		}
+		p:nth-child(3){
+			background-color: #b3d;
+		}
+		.not p:not(.pp){
+			background-color: #ccc;
+		}
+	</style>
+</head>
+<body>
+
+<p>P1</p>
+<p>P2</p>
+<p>P3</p>
+<p>P4</p>
+<p>P5</p>
+<p>P6</p>
+<div class="d" data-foo="fuck">world</div>
+<div></div>
+
+<button id="btn" disabled="true">BUTTON</button>
+
+<div class="not">
+	<p>Not P</p>
+	<p class="pp">Not P2</p>
+	<span>Span</span>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById("btn").onclick = function () {
+		alert("xx");
+	}
+
+</script>
+</body>
+</html>
