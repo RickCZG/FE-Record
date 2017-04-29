@@ -2,17 +2,33 @@
 <html>
 <head>
 	<title>vue学习记录一</title>
+	<meta charset="utf-8">
 	<script type="text/javascript" src="./vue.js"></script>
+	<style type="text/css">
+		.a{
+			height: 100px;
+			width: 200px;
+		}
+		.b{
+			background-color: red;
+		}
+	</style>
 </head>
 <body>
 
-<div id="app">
-	
+<div id="app" :class="b">
+	{{this.a}}
 </div>
 
 <script type="text/javascript">
-	
-	var app = 
+	var vm = new Vue({
+		el: "#app",
+		data: {
+			a: "123",
+			b:"{background-color:red;height:300px;width:100px;}"
+		}
+	})
+
 
 </script>
 

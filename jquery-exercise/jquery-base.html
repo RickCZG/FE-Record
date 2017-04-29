@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>jquery</title>
-	<meta charset="utf-8">
+    <title>jquery</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        #d {
+            background: black;
+            color: white;
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
-<!-- dom对象与jq对象 -->
+    <!-- dom对象与jq对象 -->
 
-	<div id="d"></div>
+    <div id="d">得到的点点滴滴</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript">
-	
-	$(function () {
-		var dom = document.getElementById("d");
-		console.log(jQuery(dom));
-		var $dom = $("#d");
-		console.log($dom);
-		console.log($dom[0]);
-	});
-</script>
+    <script src="./jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            jQuery.noConflict();
+        });
+    </script>
 </body>
+
 </html>
