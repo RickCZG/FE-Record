@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style lang="">
+      #czg_input_count{
+        margin-left: 10px;
+      }
+    </style>
+    <script src="../../jquery-exercise/jquery-3.2.1.js"></script>
+  </head>
+  <body>
+    <input type="text" id="czg-input">
+    <script>
+      $(function(){
+        var input = $("#czg-input");
+         
+        //用来获取字数
+        function getNum(){
+          return input.val().length;
+        }
+
+        //渲染元素
+        function render(){
+          var num = getNum();
+
+          if ($('#czg_input_count').length == 0) {
+            input.after('<span id="czg_input_count"></span>');
+          };
+
+          $('#czg_input_count').html(num+'个字');
+        }
+
+        //监听事件
+        input.on('keyup',function(){
+          render();
+        });
+
+        render();
+      })
+    </script>
+  </body>
+</html>
