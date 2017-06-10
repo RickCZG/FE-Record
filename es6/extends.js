@@ -45,3 +45,58 @@ let a = new A();
 let b = new B();
 console.log(b.getProp());
 
+
+class C  {
+	constructor() {
+
+		this.x = 1;
+	}
+	print() {
+		console.log(this.x);
+	}
+}
+
+class D extends C {
+	constructor() {
+		super();
+		this.x = 2;
+	}
+
+	m() {
+		super.print();
+	}
+}
+
+let d = new D();
+d.m();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
