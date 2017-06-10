@@ -18,3 +18,30 @@ console.log(cp instanceof ColorPoint);
 
 // Object.getPrototypeOf方法可以用来从子类上获取父类
 console.log(Object.getPrototypeOf(ColorPoint) === Point);
+
+
+// super
+class A {
+	constructor() {
+		this.prop = 123;
+		console.log(new.target.name);
+	}
+
+	p() {
+		return 2;
+	}
+}
+class B extends A {
+	constructor() {
+  	super();
+  	console.log(super.p());
+	}
+	getProp() {
+		return super.prop;
+	}
+}
+
+let a = new A();
+let b = new B();
+console.log(b.getProp());
+
