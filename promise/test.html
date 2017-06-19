@@ -1,0 +1,36 @@
+<html>
+	<head></head>
+
+	<body>
+		<script>
+			setTimeout(function () {
+
+				for(var i = 0;i < 100000;i++){};
+				console.log("timer a");
+			
+			}, 0); 
+
+			for(var i = 0;i < 5;i++) {
+				console.log(i);
+			}
+
+			setTimeout(function () {
+				console.log("timer b");
+			}, 0);
+
+			function waitFiveSeconds() {
+				var now = (new Date().getTime());
+
+				while(((new Date()).getTime() - now) < 5000){}
+				console.log("finish waiting");
+			}
+
+			document.addEventListener("click", function () {
+				console.log("click");
+			})
+
+			console.log("begin click");
+			waitFiveSeconds();
+		</script>
+	</body>
+</html>
