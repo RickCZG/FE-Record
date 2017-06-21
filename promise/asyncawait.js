@@ -20,6 +20,8 @@ add1(10).then(data => {
 async function add2(x) {
 	let a = await resolveAfter2Seconds(100);
 	let b = await resolveAfter2Seconds(200);
+
+	console.log("Fuck");
 	return x + a + b;
 }
 
