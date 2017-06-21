@@ -11,8 +11,10 @@ var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 var env = config.build.env
 
+/* 合并 webpack.base.conf.js */
 var webpackConfig = merge(baseWebpackConfig, {
   module: {
+    /* 使用的 loader */
     rules: utils.styleLoaders({
       sourceMap: config.build.productionSourceMap,
       extract: true
@@ -26,9 +28,12 @@ var webpackConfig = merge(baseWebpackConfig, {
   },
   plugins: [
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
+    /* 使用的插件 */
+    /* definePlugin 接收字符串插入到代码当中, 所以你需要的话可以写上 JS 的字符串 */
     new webpack.DefinePlugin({
       'process.env': env
     }),
+    /* 压缩 js (同样可以压缩 css) */
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -36,6 +41,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       sourceMap: true
     }),
     // extract css into its own file
+    /* 将 css 文件分离出来 */
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[contenthash].css')
     }),
@@ -49,6 +55,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
+    /* 构建要输出的 index.html 文件， HtmlWebpackPlugin 可以生成一个 html 并且在其中插入你构建生成的资源 */
     new HtmlWebpackPlugin({
       filename: config.build.index,
       template: 'index.html',
@@ -64,6 +71,7 @@ var webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency'
     }),
     // split vendor js into its own file
+    // CommonsChunkPlugin用于生成在入口点之间共享的公共模块（比如jquery，vue）的块并将它们分成独立的包。而为什么要new两次这个插件，这是一个很经典的bug的解决方案，在webpack的一个issues有过深入的讨论webpack/webpack#1315 .----为了将项目中的第三方依赖代码抽离出来，官方文档上推荐使用这个插件，当我们在项目里实际使用之后，发现一旦更改了 app.js 内的代码，vendor.js 的 hash 也会改变，那么下次上线时，用户仍然需要重新下载 vendor.js 与 app.js
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: function (module, count) {
@@ -93,7 +101,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     ])
   ]
 })
-
+/* 开启 gzip 的情况下使用下方的配置 */
 if (config.build.productionGzip) {
   var CompressionWebpackPlugin = require('compression-webpack-plugin')
 
