@@ -3,6 +3,7 @@ var path = require('path')
 
 module.exports = {
   build: {
+    // production 环境
     env: require('./prod.env'),
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
