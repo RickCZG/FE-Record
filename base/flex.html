@@ -34,11 +34,31 @@
     </style>
 </head>
 <body>
+<script>
+    
+    function createFunctions() {
+        var arr = new Array();
+        for(var i = 0;i < 10;i++){
+            arr[i] = function () {
+                return i;
+            }
+        }
 
-<div class="out">
-    <div class="d1"></div>
-    <div class="d2"></div>
-    <div class="d3"></div>
-</div>
+        for(var i = 0;i < 3;i++){
+            console.log(arr[i]());
+        }
+
+        return arr;
+    }
+
+
+    var res = createFunctions();
+
+    for(var i = 0;i < 10;i++){
+        console.log(res[i]());
+    }
+
+</script>
+
 </body>
 </html>
