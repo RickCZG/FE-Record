@@ -6,6 +6,7 @@ function resolveAfter2Seconds(x) {
 	});
 }
 
+
 async function add1(x) {
 	let a = resolveAfter2Seconds(22);
 	let b = resolveAfter2Seconds(33);
@@ -16,15 +17,14 @@ async function add1(x) {
 add1(10).then(data => {
 	console.log(data);
 })
+console.log("Fuck");
+// async function add2(x) {
+// 	let a = await resolveAfter2Seconds(100);
+// 	let b = await resolveAfter2Seconds(200);
 
-async function add2(x) {
-	let a = await resolveAfter2Seconds(100);
-	let b = await resolveAfter2Seconds(200);
+// 	return x + a + b;
+// }
 
-	console.log("Fuck");
-	return x + a + b;
-}
-
-add2(100).then(data => {
-	console.log(data);
-})
+// add2(100).then(data => {
+// 	console.log(data);
+// })
