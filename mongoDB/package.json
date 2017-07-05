@@ -1,0 +1,16 @@
+{
+  "name": "mongoDB",
+  "version": "1.0.0",
+  "description": "https://docs.mongodb.com/getting-started/node/client/ 记录mongoDB的学习",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongodb": "^2.2.29"
+  }
+}
