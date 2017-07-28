@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<meta charset="utf8">
+		<script src="./vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<p>{{message}}</p>
+		</div>
+
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: "lifeCycle example"
+				},
+				beforeCreate: function () {
+					console.log("-----------beforeCreate-------------");
+					console.log("el: " + this.$el);
+					console.log("data: " + this.$data);
+					console.log("message: " + this.message);
+				},
+				created: function () {
+					console.log("-----------created----------------");
+					
+				}
+			})
+		</script>
+	</body>
+</html>
