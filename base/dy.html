@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<style type="text/css">
+#box{
+width: 270px;
+height: 270px;
+padding: 5px;
+background-color: rgb(71, 82, 93);
+border-radius: 15px;
+position: relative;
+top: 100px;
+margin: 0 auto;
+}
+.sbox{
+width: 80px;
+height: 80px;
+margin: 5px;
+background-color: rgb(127, 137, 148);
+border-radius: 15px;
+float: left;
+font-size: 60px;
+text-align: center;
+line-height: 80px;
+}
+</style>
+</head>
+<body>
+<div id="box">
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+<div class="sbox"></div>
+</div>
+<script type="text/javascript">
+// var adiv=document.getElementsByClassName("sbox")[0];
+function clickX(obj){
+	debugger;
+	obj.style.backgroundColor = "rgb(114, 208, 235)";
+	obj.innerHTML="X";
+	obj.style.color = "rgb(25, 169, 229)"
+	clickNum++;
+}
+// adiv.onclick = function(){
+// alert("z")
+// clickX();
+// }
+
+// var adiv1=document.getElementsByClassName("sbox")[1];
+function click0(obj){
+	obj.style.backgroundColor = "rgb(126, 189, 38)";
+	obj.innerHTML="0";
+	obj.style.color = "rgb(185, 220, 47)"
+	clickNum++;
+}
+// adiv1.onclick = function(){
+// alert("z")
+// click0();
+// }
+//不能从点击次数入手
+
+var adiv=document.getElementsByClassName("sbox");
+// var i=0;
+// var clickNum=1;
+// !function funNum(){
+// 	if(clickNum%2==1){
+// 		for(i=0;i<adiv.length;i++){
+// 			adiv[i].onclick=function(){
+// 				click0(this);
+// 			};
+// 		}
+// 	}else if(clickNum%2==0){
+// 		for(i=0;i<adiv.length;i++){
+// 			adiv[i].onclick=function(){
+// 				clickX(this);
+// 			};
+// 		}
+// 	}
+// 	clickNum++;
+// }();
+var adiv=document.getElementsByClassName("sbox");
+var clickHandler = function () {
+	if(this.flag){
+		this.style.backgroundColor = "rgb(126, 189, 38)";
+		this.innerHTML="0";
+		this.style.color = "rgb(185, 220, 47)";
+	}else{
+		this.style.backgroundColor = "rgb(114, 208, 235)";
+		this.innerHTML="X";
+		this.style.color = "rgb(25, 169, 229)"
+	}
+	this.flag = !this.flag;
+}
+
+
+for(var i = 0;i < adiv.length;i++){
+	adiv[i].flag = true;
+	adiv[i].addEventListener('click', clickHandler, false);
+}
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
