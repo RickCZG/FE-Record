@@ -9,22 +9,75 @@
 		</div>
 
 		<script>
-			var app = new Vue({
-				el: "#app",
-				data: {
-					message: "lifeCycle example"
-				},
-				beforeCreate: function () {
-					console.log("-----------beforeCreate-------------");
-					console.log("el: " + this.$el);
-					console.log("data: " + this.$data);
-					console.log("message: " + this.message);
-				},
-				created: function () {
-					console.log("-----------created----------------");
-					
-				}
-			})
+		var app = new Vue({
+			el: '#app',
+			props: ["abc"],
+			data: {
+			  message : "some data" 
+			},
+			beforeCreate: function () {
+				console.log('beforeCreate 创建前状态===============》');
+				console.log("%c%s", "color:red" , "el     : " + this.$el); 
+				console.log("%c%s", "color:red","data   : " + this.$data);  
+				console.log("%c%s", "color:red","props   : " + this.$props);  
+				console.log("%c%s", "color:red","message: " + this.message)  
+				
+	        },
+			created: function () {
+				console.log('created 创建完毕状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el); 
+				console.log("%c%s", "color:red","data   : " + this.$data);  
+				console.log("%c%s", "color:red","props   : " + this.$props);  
+				console.log("%c%s", "color:red","message: " + this.message); 
+				
+	        },
+	        beforeMount: function () {
+				console.log('beforeMount 挂载前状态===============》');
+				console.log("%c%s", "color:red","el     : " + (this.$el)); 
+				console.log(this.$el);
+				console.log("%c%s", "color:red","data   : " + this.$data);   
+				console.log("%c%s", "color:red","props   : " + this.$props);  
+				console.log("%c%s", "color:red","message: " + this.message);   
+				
+	        },
+	        mounted: function () {
+				console.log('mounted 挂载结束状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el); 
+				console.log(this.$el);  
+				console.log("%c%s", "color:red","data   : " + this.$data); 
+				console.log("%c%s", "color:red","props   : " + this.$props);  
+				console.log("%c%s", "color:red","message: " + this.message);  
+				
+	        },
+	        beforeUpdate: function () {
+				console.log('beforeUpdate 更新前状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el);
+				console.log(this.$el);   
+				console.log("%c%s", "color:red","data   : " + this.$data); 
+				console.log("%c%s", "color:red","message: " + this.message); 
+	        },
+	        updated: function () {
+				console.log('updated 更新完成状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el);
+				console.log(this.$el); 
+				console.log("%c%s", "color:red","data   : " + this.$data); 
+				console.log("%c%s", "color:red","message: " + this.message); 
+	        },
+	        beforeDestroy: function () {
+				console.log('beforeDestroy 销毁前状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el);
+				console.log(this.$el);    
+				console.log("%c%s", "color:red","data   : " + this.$data); 
+				console.log("%c%s", "color:red","message: " + this.message); 
+	        },
+	        destroyed: function () {
+				console.log('destroyed 销毁完成状态===============》');
+				console.log("%c%s", "color:red","el     : " + this.$el);
+				console.log(this.$el);  
+				console.log("%c%s", "color:red","data   : " + this.$data); 
+				console.log("%c%s", "color:red","message: " + this.message)
+	        }
+    	})
 		</script>
 	</body>
 </html>
